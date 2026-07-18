@@ -54,13 +54,16 @@ update that value. Client-side deep links work on Pages via the
 2. Register it in `src/data/posts.ts` (slug, title, subtitle, date, accent,
    swatch colors). The router and the home index pick it up automatically.
 
-## Use real photography (the poem)
+## Photography
 
-The poem ships with drawn black-and-white placeholder portraits. To use your own,
-drop images in `public/images/portraits/` and edit the `PORTRAITS` array in
-`src/pages/posts/SadPoem.tsx`. See `public/images/portraits/README.md` for the
-exact snippet. Grayscale + contrast is applied in CSS, so color photos become
-black and white automatically.
+The site uses real photographs, hotlinked from Wikimedia Commons — a color shot
+of the Cliffs of Moher for the golden-hour world and Julia Margaret Cameron's
+*Sadness* (1864) for the poem. All image URLs live in **`src/data/media.ts`**;
+change a URL there to swap a picture everywhere it's used. Grayscale + contrast
+is applied to the portrait in CSS, so any color photo becomes black and white.
+See `CREDITS.md` for attribution. To self-host instead of hotlinking, drop files
+in `public/images/` and point the URLs at
+`import.meta.env.BASE_URL + 'images/<file>'`.
 
 ## Accessibility
 

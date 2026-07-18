@@ -1,18 +1,9 @@
-import PlaceholderPortrait from '../../components/art/PlaceholderPortrait';
 import GrainOverlay from '../../components/art/GrainOverlay';
 import Scrollytelling from '../../components/scrolly/Scrollytelling';
 import Reveal from '../../components/scrolly/Reveal';
 import Footer from '../../components/layout/Footer';
+import { PORTRAIT_IMG } from '../../data/media';
 import './sad-poem.css';
-
-/**
- * To use real photography instead of the drawn placeholders, drop images into
- * public/images/portraits/ and replace the matching entry below with its URL,
- * e.g. `import.meta.env.BASE_URL + 'images/portraits/01.jpg'`. Leave an entry
- * as null to keep the placeholder. Grayscale/contrast is applied in CSS, so
- * color photos will read as black and white automatically.
- */
-const PORTRAITS: (string | null)[] = [null, null, null, null];
 
 const STANZAS: string[][] = [
   ['The house learned your silence', 'before I did —', 'it keeps the shape of you', 'in every unlit room.'],
@@ -23,16 +14,14 @@ const STANZAS: string[][] = [
   ['So I carry it.', 'Out into the grey.', 'One foot,', 'then the other.'],
 ];
 
-// which portrait is shown while each stanza is active
-const PORTRAIT_FOR_STANZA = [0, 0, 1, 2, 2, 3];
-
-function Portrait({ index }: { index: number }) {
-  const src = PORTRAITS[index];
-  if (src) {
-    return <img className="poem__portrait-img" src={src} alt="" />;
-  }
-  return <PlaceholderPortrait variant={index} className="poem__portrait-img" />;
-}
+// Faint light-leak motes over the portrait — the flare/dots, in monochrome.
+const LEAKS = [
+  { left: '20%', top: '22%', size: 70, o: 0.14 },
+  { left: '48%', top: '14%', size: 30, o: 0.2 },
+  { left: '30%', top: '78%', size: 110, o: 0.1 },
+  { left: '12%', top: '54%', size: 24, o: 0.22 },
+  { left: '40%', top: '40%', size: 46, o: 0.12 },
+];
 
 export default function SadPoem() {
   const steps = STANZAS.map((lines, i) => (
@@ -44,8 +33,6 @@ export default function SadPoem() {
       ))}
     </div>
   ));
-
-  const activePortrait = (active: number) => PORTRAIT_FOR_STANZA[active] ?? 0;
 
   return (
     <div className="poem">
@@ -60,19 +47,28 @@ export default function SadPoem() {
       <Scrollytelling
         className="poem__scrolly"
         align="right"
-        renderSticky={(active) => (
+        renderSticky={() => (
           <div className="poem__stage">
-            {PORTRAITS.map((_, i) => (
-              <div
-                key={i}
-                className="poem__portrait"
-                style={{ opacity: activePortrait(active) === i ? 1 : 0 }}
-              >
-                <Portrait index={i} />
-              </div>
-            ))}
+            <div className="poem__portrait">
+              <img
+                className="poem__portrait-img"
+                src={PORTRAIT_IMG}
+                alt="A black-and-white portrait of a woman, her gaze lowered"
+              />
+            </div>
+            {/* light-leak dots */}
+            <div className="poem__leaks" aria-hidden>
+              <span className="poem__streak" />
+              {LEAKS.map((l, i) => (
+                <span
+                  key={i}
+                  className="poem__mote"
+                  style={{ left: l.left, top: l.top, width: l.size, height: l.size, opacity: l.o }}
+                />
+              ))}
+            </div>
             <div className="poem__vignette" />
-            <GrainOverlay opacity={0.12} blend="screen" />
+            <GrainOverlay opacity={0.14} blend="screen" />
           </div>
         )}
         steps={steps}

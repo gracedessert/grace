@@ -56,15 +56,56 @@
   transform: translate(-50%, -50%);
   width: min(42vw, 30rem);
   aspect-ratio: 4 / 5;
-  transition: opacity 1.1s ease;
-  filter: grayscale(1) contrast(1.12) brightness(0.98);
-  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  /* fallback tone shows if the photo fails to load */
+  background: #0d0d0d;
+  filter: grayscale(1) contrast(1.14) brightness(0.98);
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.75);
 }
 .poem__portrait-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  animation: poem-kenburns 28s ease-in-out infinite alternate;
+}
+@keyframes poem-kenburns {
+  from {
+    transform: scale(1.03) translateY(0);
+  }
+  to {
+    transform: scale(1.13) translateY(-2%);
+  }
+}
+
+/* ---------- light-leak dots over the portrait ---------- */
+.poem__leaks {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+.poem__mote {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
+}
+.poem__streak {
+  position: absolute;
+  top: -10%;
+  left: 26%;
+  width: 2px;
+  height: 120%;
+  transform: rotate(18deg);
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.14), transparent);
+  filter: blur(2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .poem__portrait-img {
+    animation: none;
+  }
 }
 .poem__vignette {
   position: absolute;

@@ -8,7 +8,16 @@ export default function Footer({ tone = 'light' }: { tone?: 'light' | 'dark' }) 
       <p className="footer__line">
         Written in the long light. <Link to="/">Back to all essays →</Link>
       </p>
-      <p className="footer__meta">grace · {year}</p>
+      <p className="footer__meta">
+        grace · {year} ·{' '}
+        <a
+          href="https://commons.wikimedia.org/wiki/Cliffs_of_Moher"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          photographs via Wikimedia Commons
+        </a>
+      </p>
     </footer>
   );
 }
