@@ -1,0 +1,195 @@
+.gscene {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #1c1712;
+}
+
+/* ---------- sky phases (crossfaded by opacity) ---------- */
+.gscene__sky {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.gscene__sky--dawn {
+  background: linear-gradient(
+    180deg,
+    #2a2540 0%,
+    #6d5170 34%,
+    #d98a86 66%,
+    #f3c39a 100%
+  );
+}
+.gscene__sky--noon {
+  background: linear-gradient(
+    180deg,
+    #5b9dd6 0%,
+    #9cc4e0 45%,
+    #eadfb8 85%,
+    #f6e6b6 100%
+  );
+}
+.gscene__sky--golden {
+  background: linear-gradient(
+    180deg,
+    #6f3f7a 0%,
+    #d9743f 42%,
+    #f4b451 74%,
+    #ffe39a 100%
+  );
+}
+.gscene__sky--dusk {
+  background: linear-gradient(
+    180deg,
+    #14172e 0%,
+    #3a2350 38%,
+    #7c2f4f 68%,
+    #c25a45 100%
+  );
+}
+
+/* ---------- sun ---------- */
+.gscene__sun-wrap {
+  position: absolute;
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+  margin: -60px 0 0 -60px;
+  pointer-events: none;
+  will-change: transform;
+}
+.gscene__sun {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    #fff7e0 0%,
+    #ffe39a 34%,
+    #ffbf5e 60%,
+    rgba(255, 170, 80, 0) 72%
+  );
+  filter: blur(0.4px);
+}
+.gscene__rays {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 900px;
+  height: 900px;
+  margin: -450px 0 0 -450px;
+  background: conic-gradient(
+    from 0deg,
+    rgba(255, 224, 150, 0.28) 0deg,
+    rgba(255, 224, 150, 0) 7deg,
+    rgba(255, 224, 150, 0) 15deg,
+    rgba(255, 224, 150, 0.28) 22deg
+  );
+  border-radius: 50%;
+  mask: radial-gradient(circle, #000 8%, transparent 62%);
+  -webkit-mask: radial-gradient(circle, #000 8%, transparent 62%);
+  animation: gscene-spin 90s linear infinite;
+}
+.gscene__flare span {
+  position: absolute;
+  top: 50%;
+  width: 26px;
+  height: 26px;
+  margin-top: -13px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 240, 200, 0.7),
+    rgba(255, 200, 130, 0)
+  );
+}
+
+/* ---------- hills ---------- */
+.gscene__hill {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+}
+.gscene__hill--far {
+  height: 62%;
+  z-index: 1;
+  opacity: 0.75;
+}
+.gscene__hill--mid {
+  height: 48%;
+  z-index: 2;
+}
+.gscene__hill--near {
+  height: 34%;
+  z-index: 4;
+}
+
+/* ---------- stag ---------- */
+.gscene__deer {
+  position: absolute;
+  z-index: 3;
+  bottom: 27%;
+  left: 60%;
+  width: clamp(96px, 15vw, 190px);
+  height: clamp(96px, 15vw, 190px);
+  will-change: transform, opacity;
+}
+/* hero: distant stag, low and to the right, away from the centered title */
+.gscene--hero .gscene__deer {
+  left: 73%;
+  bottom: 19%;
+  width: clamp(80px, 11vw, 150px);
+  height: clamp(80px, 11vw, 150px);
+}
+
+/* ---------- foreground flowers ---------- */
+.gscene__flowers {
+  position: absolute;
+  z-index: 5;
+  bottom: -2%;
+  left: 0;
+  right: 0;
+  height: 42%;
+  transform-origin: 50% 100%;
+}
+.gscene__flower {
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+}
+.gscene__flower--1 {
+  left: 6%;
+  height: 78%;
+}
+.gscene__flower--2 {
+  right: 12%;
+  height: 96%;
+}
+.gscene__flower--3 {
+  right: 30%;
+  height: 66%;
+}
+
+@keyframes gscene-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes flower-sway {
+  from {
+    transform: rotate(-2.5deg);
+  }
+  to {
+    transform: rotate(2.5deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gscene__rays {
+    animation: none;
+  }
+  .gscene__flower {
+    animation: none !important;
+  }
+}

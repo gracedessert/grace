@@ -1,0 +1,25 @@
+.footer {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: clamp(4rem, 12vh, 9rem) var(--pad) 4rem;
+}
+.footer__line {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: clamp(1.15rem, 3vw, 1.6rem);
+  margin-bottom: 0.6rem;
+}
+.footer__line a {
+  border-bottom: 1px solid currentColor;
+  white-space: nowrap;
+}
+.footer__meta {
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+.footer--dark {
+  color: #cfcfcf;
+}

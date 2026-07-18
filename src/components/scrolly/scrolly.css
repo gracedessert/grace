@@ -1,0 +1,93 @@
+.scrolly {
+  position: relative;
+  width: 100%;
+}
+
+/* The pinned graphic */
+.scrolly__sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  width: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* The scrolling text column sits above the sticky graphic */
+.scrolly__steps {
+  position: relative;
+  z-index: 2;
+  /* pull the steps up over the sticky graphic that precedes them */
+  margin-top: -100vh;
+  margin-top: -100svh;
+  padding: 0 var(--pad);
+  display: flex;
+  flex-direction: column;
+}
+
+.scrolly__step {
+  min-height: 88vh;
+  min-height: 88svh;
+  display: flex;
+  align-items: center;
+  max-width: 30rem;
+}
+
+/* First and last steps get breathing room so the graphic reads before/after */
+.scrolly__step:first-child {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+.scrolly--left .scrolly__steps {
+  align-items: flex-start;
+}
+.scrolly--right .scrolly__steps {
+  align-items: flex-end;
+}
+.scrolly--center .scrolly__steps {
+  align-items: center;
+}
+.scrolly--center .scrolly__step {
+  text-align: center;
+}
+
+/* A frosted card behind each step so text stays legible over busy graphics */
+.scrolly__step > * {
+  background: color-mix(in srgb, var(--bg) 62%, transparent);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 1.4rem 1.6rem;
+  border-radius: 14px;
+  border: 1px solid color-mix(in srgb, var(--fg) 10%, transparent);
+  transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
+  opacity: 0.5;
+  transform: translateY(8px);
+}
+
+.scrolly__step.is-active > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scrolly__step > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* On wider screens, keep the text to one side and let the scene breathe */
+@media (min-width: 900px) {
+  .scrolly__step {
+    max-width: 26rem;
+  }
+  .scrolly--left .scrolly__steps {
+    padding-left: clamp(2rem, 7vw, 7rem);
+  }
+  .scrolly--right .scrolly__steps {
+    padding-right: clamp(2rem, 7vw, 7rem);
+  }
+}
