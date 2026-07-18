@@ -1,0 +1,207 @@
+/* ---------------- hero ---------------- */
+.hero {
+  position: relative;
+  height: 100vh;
+  height: 100svh;
+  min-height: 620px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+.hero__scene {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  background: radial-gradient(
+    ellipse at 50% 46%,
+    rgba(0, 0, 0, 0.12) 0%,
+    rgba(0, 0, 0, 0.42) 100%
+  );
+}
+.hero__copy {
+  position: relative;
+  z-index: 8;
+  padding: 0 var(--pad);
+  color: #fff8ec;
+  text-shadow: 0 2px 30px rgba(40, 20, 10, 0.55);
+}
+.hero__eyebrow {
+  font-size: 0.85rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  opacity: 0.9;
+}
+.hero__title {
+  font-size: clamp(4.5rem, 20vw, 13rem);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+}
+.hero__tagline {
+  font-family: var(--serif);
+  font-size: clamp(1.1rem, 2.8vw, 1.7rem);
+  line-height: 1.4;
+  max-width: 30rem;
+  margin: 1.4rem auto 0;
+  opacity: 0.95;
+}
+.hero__cue {
+  position: absolute;
+  bottom: 2.2rem;
+  z-index: 8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  color: #fff8ec;
+  font-size: 0.72rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+.hero__cue-line {
+  width: 1px;
+  height: 42px;
+  background: linear-gradient(#fff8ec, transparent);
+}
+
+/* ---------------- intro ---------------- */
+.intro {
+  background: linear-gradient(180deg, #120d09 0%, #1a130c 100%);
+  padding: clamp(5rem, 16vh, 11rem) var(--pad);
+}
+.intro__lede {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 4.2vw, 2.6rem);
+  line-height: 1.32;
+  color: var(--gold-100);
+  margin-bottom: 1.6rem;
+}
+.intro p:not(.intro__lede) {
+  color: color-mix(in srgb, var(--cream) 82%, transparent);
+  font-size: 1.15rem;
+}
+
+/* ---------------- index ---------------- */
+.index {
+  background: #1a130c;
+  padding: 2rem var(--pad) clamp(3rem, 8vh, 6rem);
+}
+.index__heading {
+  text-align: center;
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  color: var(--cream);
+  margin-bottom: 3rem;
+}
+.index__list {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 60rem;
+  display: grid;
+  gap: 1.6rem;
+}
+.card-wrap {
+  list-style: none;
+}
+.card {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 1.8rem;
+  align-items: stretch;
+  padding: 1.1rem;
+  border-radius: 18px;
+  background: color-mix(in srgb, #ffffff 4%, transparent);
+  border: 1px solid color-mix(in srgb, #ffffff 8%, transparent);
+  transition: transform 0.5s var(--ease-out), background 0.4s,
+    border-color 0.4s;
+}
+.card:hover {
+  transform: translateY(-4px);
+  background: color-mix(in srgb, #ffffff 7%, transparent);
+  border-color: color-mix(in srgb, var(--gold-300) 45%, transparent);
+}
+.card__swatch {
+  position: relative;
+  border-radius: 12px;
+  min-height: 150px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 0.9rem;
+}
+.card__swatch::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 70% 20%,
+    rgba(255, 255, 255, 0.35),
+    transparent 55%
+  );
+}
+.card__kicker {
+  position: relative;
+  z-index: 1;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(0, 0, 0, 0.28);
+  padding: 0.3rem 0.6rem;
+  border-radius: 100px;
+  backdrop-filter: blur(3px);
+}
+.card--mono .card__kicker {
+  color: #f4f4f4;
+}
+.card__body {
+  display: flex;
+  flex-direction: column;
+  padding: 0.6rem 0.6rem 0.6rem 0;
+}
+.card__title {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  color: var(--cream);
+  line-height: 1.05;
+}
+.card__sub {
+  color: color-mix(in srgb, var(--cream) 70%, transparent);
+  margin-top: 0.5rem;
+  font-size: 1.02rem;
+  flex: 1;
+}
+.card__date {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.5;
+  margin-top: 1rem;
+}
+.card__cta {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-top: 0.4rem;
+}
+
+@media (max-width: 620px) {
+  .card {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .card__swatch {
+    min-height: 120px;
+  }
+}

@@ -1,0 +1,47 @@
+:root {
+  /* ---- Golden-hour house palette (home + warm posts) ---- */
+  --gold-100: #fbeecb;
+  --gold-200: #f4d79a;
+  --gold-300: #eab758;
+  --gold-400: #d9922f;
+  --gold-500: #b96a1f;
+
+  --peach: #f6cba6;
+  --rose-200: #eaa7b3;
+  --rose-400: #d17389;
+  --rose-600: #9e3f5a;
+  --thorn: #6d2338;
+
+  --pine-700: #2b3a2a;
+  --pine-800: #1f2b1f;
+  --pine-900: #141c14;
+
+  --cream: #f7f1e6;
+  --ink: #241a12;
+  --ink-soft: #4a3a2c;
+
+  /* Warm page defaults */
+  --bg: #120d09;
+  --fg: var(--cream);
+
+  /* ---- Type ---- */
+  --serif: 'Fraunces', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* ---- Rhythm ---- */
+  --measure: 34rem;
+  --pad: clamp(1.25rem, 5vw, 4rem);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ---- Mono world (the sad poem) ---- */
+.world-mono {
+  --bg: #050505;
+  --fg: #ededed;
+  --mono-100: #f6f6f6;
+  --mono-300: #b8b8b8;
+  --mono-500: #767676;
+  --mono-700: #363636;
+  --mono-900: #101010;
+}
