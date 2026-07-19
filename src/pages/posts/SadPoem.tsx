@@ -1,26 +1,34 @@
-import GrainOverlay from '../../components/art/GrainOverlay';
-import Scrollytelling from '../../components/scrolly/Scrollytelling';
-import Reveal from '../../components/scrolly/Reveal';
-import Footer from '../../components/layout/Footer';
-import { PORTRAIT_IMG } from '../../data/media';
-import './sad-poem.css';
+import GrainOverlay from "../../components/art/GrainOverlay";
+import Scrollytelling from "../../components/scrolly/Scrollytelling";
+import Reveal from "../../components/scrolly/Reveal";
+import Footer from "../../components/layout/Footer";
+import { PORTRAIT_IMG } from "../../data/media";
+import "./sad-poem.css";
 
 const STANZAS: string[][] = [
-  ['The house learned your silence', 'before I did —', 'it keeps the shape of you', 'in every unlit room.'],
-  ['I set two cups down, still.', 'My hands have not been told.', 'They go on believing', 'in the sound of the door.'],
-  ['Grief is not the storm.', 'Grief is the after:', 'the flat grey light,', 'the clock that keeps its promises.'],
-  ['People say you are at peace.', 'I would settle for', 'a footstep on the stair,', 'a reason to look up.'],
-  ['I am learning the weight of quiet —', 'how it fills a coat,', 'a chair, a Sunday,', 'and asks to be carried like a child.'],
-  ['So I carry it.', 'Out into the grey.', 'One foot,', 'then the other.'],
+  [
+    "I put each thought through an x-ray scan",
+    "analyze its capability of destruction.",
+    "when the warning alarm goes off",
+    "I pull all employees over to argue it into oblivion.",
+    "and write it down to be extra safe it'll never come back.",
+    "At home I write it on 100 sticky notes",
+    "and paste them on my wall.",
+    "My ceilings are now covered",
+    "and they fall on me in my sleep.",
+    "Strike my face, raid my dreams,",
+    "good",
+    "maybe this is good for me.",
+  ],
 ];
 
 // Faint light-leak motes over the portrait — the flare/dots, in monochrome.
 const LEAKS = [
-  { left: '20%', top: '22%', size: 70, o: 0.14 },
-  { left: '48%', top: '14%', size: 30, o: 0.2 },
-  { left: '30%', top: '78%', size: 110, o: 0.1 },
-  { left: '12%', top: '54%', size: 24, o: 0.22 },
-  { left: '40%', top: '40%', size: 46, o: 0.12 },
+  { left: "20%", top: "22%", size: 70, o: 0.14 },
+  { left: "48%", top: "14%", size: 30, o: 0.2 },
+  { left: "30%", top: "78%", size: 110, o: 0.1 },
+  { left: "12%", top: "54%", size: 24, o: 0.22 },
+  { left: "40%", top: "40%", size: 46, o: 0.12 },
 ];
 
 export default function SadPoem() {
@@ -63,7 +71,13 @@ export default function SadPoem() {
                 <span
                   key={i}
                   className="poem__mote"
-                  style={{ left: l.left, top: l.top, width: l.size, height: l.size, opacity: l.o }}
+                  style={{
+                    left: l.left,
+                    top: l.top,
+                    width: l.size,
+                    height: l.size,
+                    opacity: l.o,
+                  }}
                 />
               ))}
             </div>
