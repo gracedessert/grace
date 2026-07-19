@@ -1,6 +1,5 @@
-import type { ComponentType } from 'react';
-import GoldenHour from '../pages/posts/GoldenHour';
-import SadPoem from '../pages/posts/SadPoem';
+import type { ComponentType } from "react";
+import SadPoem from "../pages/posts/SadPoem";
 
 export interface Post {
   /** URL slug, mounted at /essays/:slug */
@@ -27,23 +26,13 @@ export interface Post {
  */
 export const posts: Post[] = [
   {
-    slug: 'golden-hour',
-    title: 'Golden Hour',
-    subtitle: 'On the country light that only stays for a moment.',
-    date: '2026-06-21',
-    kicker: 'a walk at dusk',
-    accent: '#eab758',
-    swatch: ['#f4d79a', '#9e3f5a'],
-    component: GoldenHour,
-  },
-  {
-    slug: 'the-weight-of-quiet',
-    title: 'The Weight of Quiet',
-    subtitle: 'A poem, in black and white.',
-    date: '2026-02-09',
-    kicker: 'a poem',
-    accent: '#ededed',
-    swatch: ['#2a2a2a', '#050505'],
+    slug: "the-weight-of-quiet",
+    title: "The Weight of Quiet",
+    subtitle: "A poem, in black and white.",
+    date: "2026-02-09",
+    kicker: "a poem",
+    accent: "#ededed",
+    swatch: ["#2a2a2a", "#050505"],
     mono: true,
     component: SadPoem,
   },

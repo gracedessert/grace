@@ -1,15 +1,6 @@
 # grace
 
-A scrollytelling personal-essay journal — the kind of scroll-driven storytelling
-you see on [pudding.cool](https://pudding.cool), reframed as a writing space.
-The home is Ireland at golden hour (sun flares, a stag, pink flowers with
-thorns); each essay is its own visual world. The first two:
-
-- **Golden Hour** — a walk at dusk where the landscape transforms as you scroll:
-  the sun arcs from noon to dusk, the sky shifts, a stag steps in, the flowers
-  bloom.
-- **The Weight of Quiet** — a sad poem in stark black and white, with portraits
-  that crossfade between stanzas.
+Personal essays.
 
 Built with **Vite + React + TypeScript** and **Framer Motion**. All imagery is
 generated SVG/CSS — no external assets — so it runs fast and looks finished out
@@ -32,9 +23,7 @@ npm run preview    # serve the production build locally
 ## Deploy (GitHub Pages)
 
 A workflow at `.github/workflows/deploy.yml` builds and publishes on every push
-to `main` (and on manual dispatch). **One-time setup:** in the repo, go to
-**Settings → Pages → Build and deployment → Source: GitHub Actions**. After that,
-the site publishes to:
+to `main` (and on manual dispatch).
 
 ```
 https://gracedessert.github.io/grace/
@@ -54,36 +43,9 @@ update that value. Client-side deep links work on Pages via the
 2. Register it in `src/data/posts.ts` (slug, title, subtitle, date, accent,
    swatch colors). The router and the home index pick it up automatically.
 
-## Photography
-
-The site uses real photographs, hotlinked from Wikimedia Commons — a color shot
-of the Cliffs of Moher for the golden-hour world and Julia Margaret Cameron's
-*Sadness* (1864) for the poem. All image URLs live in **`src/data/media.ts`**;
-change a URL there to swap a picture everywhere it's used. Grayscale + contrast
-is applied to the portrait in CSS, so any color photo becomes black and white.
-See `CREDITS.md` for attribution. To self-host instead of hotlinking, drop files
-in `public/images/` and point the URLs at
-`import.meta.env.BASE_URL + 'images/<file>'`.
-
 ## Accessibility
 
 - Honors `prefers-reduced-motion`: heavy animation freezes and all text is shown
   at once instead of being gated behind scroll.
 - Scrollytelling has a mobile fallback — the graphic sits behind the text with a
   scrim so each story still reads as one column on small screens.
-
-## Structure
-
-```
-src/
-  data/posts.ts              essay registry → routes + home index
-  components/
-    scrolly/                 Scrollytelling, ScrollStep, Reveal, ProgressBar
-    art/                     GoldenScene, Deer, ThornedFlower, PlaceholderPortrait, …
-    layout/                  Nav, Footer
-  pages/
-    Home.tsx                 golden-hour landing + essay index
-    EssayHost.tsx            resolves :slug and frames the essay
-    posts/GoldenHour.tsx     warm scrollytelling essay
-    posts/SadPoem.tsx        black-and-white poem world
-```

@@ -4,11 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#1a1410" />
-    <meta
-      name="description"
-      content="grace — a personal essay journal told through scroll. Golden-hour country light, and quieter, darker rooms."
-    />
-    <title>grace — essays told through scroll</title>
+    <meta name="description" content="grace — a personal essay journal." />
+    <title>grace</title>
     <!--
       Single Page Apps for GitHub Pages
       Restores the real path after the 404.html redirect, so deep links work.
@@ -16,18 +13,18 @@
     -->
     <script>
       (function (l) {
-        if (l.search[1] === '/') {
+        if (l.search[1] === "/") {
           var decoded = l.search
             .slice(1)
-            .split('&')
+            .split("&")
             .map(function (s) {
-              return s.replace(/~and~/g, '&');
+              return s.replace(/~and~/g, "&");
             })
-            .join('?');
+            .join("?");
           window.history.replaceState(
             null,
             null,
-            l.pathname.slice(0, -1) + decoded + l.hash
+            l.pathname.slice(0, -1) + decoded + l.hash,
           );
         }
       })(window.location);

@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { getPost } from '../data/posts';
-import Nav from '../components/layout/Nav';
-import NotFound from './NotFound';
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { getPost } from "../data/posts";
+import Nav from "../components/layout/Nav";
+import NotFound from "./NotFound";
 
 /**
  * Resolves :slug to an essay, sets the tab title, and frames it with the
@@ -15,7 +15,7 @@ export default function EssayHost() {
   useEffect(() => {
     if (post) document.title = `${post.title} — grace`;
     return () => {
-      document.title = 'grace — essays told through scroll';
+      document.title = "grace";
     };
   }, [post]);
 
@@ -23,8 +23,11 @@ export default function EssayHost() {
 
   const Essay = post.component;
   return (
-    <div className={post.mono ? 'world-mono' : undefined} style={{ background: 'var(--bg)' }}>
-      <Nav tone={post.mono ? 'dark' : 'light'} />
+    <div
+      className={post.mono ? "world-mono" : undefined}
+      style={{ background: "var(--bg)" }}
+    >
+      <Nav tone={post.mono ? "dark" : "light"} />
       <main id="main">
         <Essay />
       </main>

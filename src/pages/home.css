@@ -11,21 +11,6 @@
   text-align: center;
   overflow: hidden;
 }
-.hero__scene {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-.hero__scrim {
-  position: absolute;
-  inset: 0;
-  z-index: 6;
-  background: radial-gradient(
-    ellipse at 50% 46%,
-    rgba(0, 0, 0, 0.12) 0%,
-    rgba(0, 0, 0, 0.42) 100%
-  );
-}
 .hero__copy {
   position: relative;
   z-index: 8;
@@ -123,7 +108,9 @@
   border-radius: 18px;
   background: color-mix(in srgb, #ffffff 4%, transparent);
   border: 1px solid color-mix(in srgb, #ffffff 8%, transparent);
-  transition: transform 0.5s var(--ease-out), background 0.4s,
+  transition:
+    transform 0.5s var(--ease-out),
+    background 0.4s,
     border-color 0.4s;
 }
 .card:hover {
@@ -141,7 +128,7 @@
   padding: 0.9rem;
 }
 .card__swatch::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: radial-gradient(
