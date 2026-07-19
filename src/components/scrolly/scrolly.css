@@ -31,7 +31,7 @@
   min-height: 88svh;
   display: flex;
   align-items: center;
-  max-width: 30rem;
+  max-width: 35rem;
 }
 
 /* First and last steps get breathing room so the graphic reads before/after */
@@ -61,7 +61,9 @@
   padding: 1.4rem 1.6rem;
   border-radius: 14px;
   border: 1px solid color-mix(in srgb, var(--fg) 10%, transparent);
-  transition: opacity 0.5s var(--ease-out), transform 0.5s var(--ease-out);
+  transition:
+    opacity 0.5s var(--ease-out),
+    transform 0.5s var(--ease-out);
   opacity: 0.5;
   transform: translateY(8px);
 }
@@ -82,7 +84,7 @@
 /* On wider screens, keep the text to one side and let the scene breathe */
 @media (min-width: 900px) {
   .scrolly__step {
-    max-width: 26rem;
+    max-width: 35rem;
   }
   .scrolly--left .scrolly__steps {
     padding-left: clamp(2rem, 7vw, 7rem);

@@ -1,5 +1,5 @@
 import type { ComponentType } from "react";
-import SadPoem from "../pages/posts/SadPoem";
+import Restoration from "../pages/posts/Restoration";
 
 export interface Post {
   /** URL slug, mounted at /essays/:slug */
@@ -26,15 +26,15 @@ export interface Post {
  */
 export const posts: Post[] = [
   {
-    slug: "the-weight-of-quiet",
-    title: "The Weight of Quiet",
-    subtitle: "A poem, in black and white.",
-    date: "2026-02-09",
+    slug: "restoration",
+    title: "Restoration",
+    subtitle: "",
+    date: "2026-07-19",
     kicker: "a poem",
     accent: "#ededed",
     swatch: ["#2a2a2a", "#050505"],
     mono: true,
-    component: SadPoem,
+    component: Restoration,
   },
 ];
 

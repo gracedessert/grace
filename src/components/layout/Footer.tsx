@@ -11,7 +11,7 @@ export default function Footer({
       {/* <p className="footer__line">
         <Link to="/">Back home →</Link>
       </p> */}
-      <p className="footer__meta">grace · {year}</p>
+      <p className="footer__meta">{year}</p>
     </footer>
   );
 }

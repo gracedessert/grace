@@ -34,9 +34,9 @@
 }
 .hero__tagline {
   font-family: var(--serif);
-  font-size: clamp(1.1rem, 2.8vw, 1.7rem);
+  font-size: clamp(1.1rem, 2.8vw, 1.5rem);
   line-height: 1.4;
-  max-width: 30rem;
+  max-width: 35rem;
   margin: 1.4rem auto 0;
   opacity: 0.95;
 }
