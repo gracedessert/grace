@@ -12,14 +12,14 @@ const STANZAS: string[][] = [
     "when the warning alarm goes off",
     "I pull all employees over to argue it into oblivion.",
     "and write it down to be extra safe it'll never come back.",
+  ],
+  [
     "At home I write it on 100 sticky notes",
     "and paste them on my wall.",
     "My ceilings are now covered",
     "and they fall on me in my sleep.",
-    "Strike my face, raid my dreams,",
-    "good",
-    "maybe this is good for me.",
   ],
+  ["Strike my face, raid my dreams,", "good", "maybe this is good for me."],
 ];
 
 // Faint light-leak motes over the portrait — the flare/dots, in monochrome.
