@@ -94,11 +94,7 @@ export default function Restoration() {
         renderSticky={() => (
           <div className="poem__stage">
             <div className="poem__portrait">
-              <img
-                className="poem__portrait-img"
-                src={PORTRAIT_IMG}
-                alt="A black-and-white portrait of a woman, her gaze lowered"
-              />
+              <img className="poem__portrait-img" src={PORTRAIT_IMG} />
             </div>
             {/* light-leak dots */}
             <div className="poem__leaks" aria-hidden>
