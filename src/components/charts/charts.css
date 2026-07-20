@@ -1,0 +1,238 @@
+/* Data-viz palette (validated for the dark surface with the dataviz skill).
+   Blue = the field / baseline; red = ultimate / decline. */
+.viz-root {
+  --surface-1: #1a1a19;
+  --v-text: #f4f2ea;
+  --v-muted: #a7a99c;
+  --v-grid: #ffffff1a;
+  --v-blue: #3987e5;
+  --v-red: #e66767;
+  --v-neutral: #6b6f66;
+}
+
+.chart {
+  margin: 0 0 1rem;
+  padding: 1.4rem clamp(1rem, 3vw, 1.8rem) 1.1rem;
+  background: var(--surface-1);
+  border: 1px solid #ffffff14;
+  border-radius: 16px;
+}
+.chart__head {
+  margin-bottom: 0.9rem;
+}
+.chart__kicker {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--v-red);
+  margin: 0 0 0.4rem;
+}
+.chart__title {
+  font-family: var(--serif);
+  font-size: clamp(1.25rem, 3.2vw, 1.7rem);
+  line-height: 1.12;
+  color: var(--v-text);
+  margin: 0;
+}
+.chart__note {
+  color: var(--v-muted);
+  font-size: 0.95rem;
+  margin: 0.5rem 0 0;
+  max-width: 40rem;
+}
+.chart__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.6rem;
+  font-size: 0.82rem;
+  color: var(--v-muted);
+}
+.chart__legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.chart__swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  display: inline-block;
+}
+.chart__plot {
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+}
+.chart__plot svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+/* axis + marks */
+.v-bar {
+  transition: opacity 0.2s ease;
+}
+.v-axis line,
+.v-axis path {
+  stroke: var(--v-grid);
+}
+.v-axis text {
+  fill: var(--v-muted);
+  font-size: 13px;
+}
+.v-label {
+  fill: var(--v-text);
+  font-size: 13px;
+}
+.v-value {
+  fill: var(--v-text);
+  font-size: 13px;
+  font-weight: 600;
+}
+.v-zero {
+  stroke: #ffffff40;
+  stroke-width: 1;
+}
+
+/* tooltip */
+.chart__tip {
+  position: absolute;
+  pointer-events: none;
+  z-index: 5;
+  transform: translate(-50%, -115%);
+  background: #000000d9;
+  border: 1px solid #ffffff24;
+  color: #fff;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+.chart__tip strong {
+  color: var(--v-text);
+}
+
+/* foot: source + table toggle */
+.chart__foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin-top: 0.9rem;
+  font-size: 0.8rem;
+  color: var(--v-muted);
+}
+.chart__toggle {
+  background: none;
+  border: 1px solid #ffffff2e;
+  color: var(--v-muted);
+  border-radius: 100px;
+  padding: 0.3rem 0.8rem;
+  font: inherit;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+.chart__toggle:hover {
+  color: var(--v-text);
+  border-color: #ffffff55;
+}
+.chart__source a {
+  color: var(--v-muted);
+  border-bottom: 1px solid #ffffff33;
+}
+.chart__source a:hover {
+  color: var(--v-text);
+}
+
+.chart__table-wrap {
+  margin-top: 0.9rem;
+  overflow-x: auto;
+}
+.chart__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  color: var(--v-text);
+}
+.chart__table th,
+.chart__table td {
+  text-align: left;
+  padding: 0.4rem 0.7rem;
+  border-bottom: 1px solid #ffffff14;
+}
+.chart__table th {
+  color: var(--v-muted);
+  font-weight: 600;
+}
+
+/* hero stat tiles */
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 1rem;
+  margin: 0 0 1rem;
+}
+.tile {
+  background: var(--surface-1);
+  border: 1px solid #ffffff14;
+  border-left: 3px solid var(--v-neutral);
+  border-radius: 14px;
+  padding: 1.2rem 1.3rem;
+}
+.tile--down {
+  border-left-color: var(--v-red);
+}
+.tile--up {
+  border-left-color: var(--v-blue);
+}
+.tile__value {
+  font-family: var(--serif);
+  font-size: clamp(1.9rem, 5vw, 2.7rem);
+  line-height: 1;
+  color: var(--v-text);
+  font-variant-numeric: tabular-nums;
+}
+.tile--down .tile__value {
+  color: var(--v-red);
+}
+.tile__label {
+  margin-top: 0.5rem;
+  color: var(--v-muted);
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+/* spirit categories */
+.spirit-cats {
+  list-style: none;
+  padding: 0;
+  margin: 0.6rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.spirit-cats li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #ffffff0f;
+  border: 1px solid #ffffff14;
+  border-radius: 100px;
+  padding: 0.35rem 0.8rem 0.35rem 0.4rem;
+  font-size: 0.84rem;
+  color: var(--v-text);
+}
+.spirit-cats__pts {
+  background: var(--v-blue);
+  color: #06121f;
+  font-weight: 700;
+  font-size: 0.72rem;
+  border-radius: 100px;
+  padding: 0.15rem 0.5rem;
+}
