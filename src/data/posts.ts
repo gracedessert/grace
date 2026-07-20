@@ -1,5 +1,6 @@
 import type { ComponentType } from "react";
 import Restoration from "../pages/posts/Restoration";
+import UltimateData from "../pages/posts/UltimateData";
 
 export interface Post {
   /** URL slug, mounted at /essays/:slug */
@@ -25,6 +26,16 @@ export interface Post {
  * read from here, so adding a new essay is: write the component, add an entry.
  */
 export const posts: Post[] = [
+  {
+    slug: "ultimate-data",
+    title: "What We Count About Ultimate",
+    subtitle: "A data exploration of the sport I just fell for.",
+    date: "2026-07-20",
+    kicker: "a data exploration",
+    accent: "#3987e5",
+    swatch: ["#3987e5", "#101210"],
+    component: UltimateData,
+  },
   {
     slug: "restoration",
     title: "Restoration",

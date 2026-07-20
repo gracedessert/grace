@@ -1,0 +1,181 @@
+.data {
+  background: #101210;
+  color: #f4f2ea;
+  min-height: 100vh;
+}
+
+/* hero */
+.data__hero {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: clamp(6rem, 16vh, 10rem) var(--pad) clamp(2rem, 6vh, 4rem);
+}
+.data__kicker {
+  font-size: 0.78rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--v-red, #e66767);
+  margin: 0 0 1rem;
+}
+.data__title {
+  font-family: var(--serif);
+  font-size: clamp(2.6rem, 8vw, 5rem);
+  line-height: 1;
+  margin: 0;
+}
+.data__standfirst {
+  font-family: var(--serif);
+  font-size: clamp(1.15rem, 2.8vw, 1.5rem);
+  line-height: 1.5;
+  color: #d7d4c7;
+  margin: 1.5rem 0 0;
+}
+
+/* body */
+.data__body {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 0 var(--pad) 3rem;
+}
+.data__section {
+  margin: clamp(3rem, 9vh, 6rem) 0;
+}
+.data__h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  line-height: 1.1;
+  margin: 0 0 1rem;
+  color: #fff;
+}
+.data__p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #cfccbf;
+  margin: 0 0 1.4rem;
+  max-width: 38rem;
+}
+.data__p--tight {
+  margin-top: 1.2rem;
+}
+.data__p em {
+  color: #fff;
+  font-style: italic;
+}
+
+/* officiating rows */
+.offic {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.offic__row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 0.8rem;
+  align-items: center;
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  background: #1a1a19;
+  border: 1px solid #ffffff14;
+  border-left: 3px solid var(--v-blue, #3987e5);
+}
+.offic__row--refs {
+  border-left-color: var(--v-red, #e66767);
+}
+.offic__league {
+  font-weight: 600;
+}
+.offic__who {
+  color: #a7a99c;
+  font-size: 0.9rem;
+}
+.offic__tag {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: 100px;
+  background: #ffffff12;
+  color: #d7d4c7;
+  white-space: nowrap;
+}
+.offic__row--refs .offic__tag {
+  background: #e6676722;
+  color: #f0a9a9;
+}
+
+/* source catalog */
+.sources {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 0.9rem;
+}
+.source-card {
+  background: #1a1a19;
+  border: 1px solid #ffffff14;
+  border-radius: 14px;
+  padding: 1rem 1.1rem;
+}
+.source-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.source-card__name {
+  font-weight: 600;
+  color: #fff;
+  border-bottom: 1px solid #ffffff33;
+}
+.source-card__name:hover {
+  border-bottom-color: #fff;
+}
+.source-card__access {
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.18rem 0.5rem;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+.source-card__access--free {
+  background: #3987e522;
+  color: #9cc4f2;
+}
+.source-card__access--paid {
+  background: #e6676722;
+  color: #f0a9a9;
+}
+.source-card__access--open-source {
+  background: #ffffff14;
+  color: #cfccbf;
+}
+.source-card__what {
+  font-size: 0.92rem;
+  line-height: 1.4;
+  color: #d7d4c7;
+  margin: 0 0 0.5rem;
+}
+.source-card__grain {
+  font-size: 0.78rem;
+  color: #8f9186;
+  margin: 0;
+}
+
+/* gaps */
+.gaps {
+  margin: 0 0 1.4rem;
+  padding-left: 1.1rem;
+}
+.gaps li {
+  color: #cfccbf;
+  line-height: 1.6;
+  margin-bottom: 0.7rem;
+}
+.gaps li::marker {
+  color: var(--v-red, #e66767);
+}
