@@ -1,0 +1,196 @@
+.travelers {
+  background: #f4ecdd;
+  color: #2c2418;
+}
+
+/* ---------- title ---------- */
+.travelers__title-card {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--pad);
+  background:
+    radial-gradient(ellipse at 50% 30%, rgba(234, 183, 88, 0.35), transparent 60%),
+    linear-gradient(180deg, #fbeecb, #f4ecdd 60%, #e9dcc2);
+}
+.travelers__kicker {
+  font-size: 0.78rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--gold-500);
+  margin-bottom: 1.2rem;
+}
+.travelers__title {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-style: italic;
+  font-size: clamp(2.6rem, 9vw, 6rem);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  color: #3a2c19;
+}
+.travelers__rule {
+  width: 1px;
+  height: 70px;
+  margin: 2rem 0 0.8rem;
+  background: linear-gradient(var(--gold-400), transparent);
+}
+
+/* ---------- sticky image stage ---------- */
+.travelers__stage {
+  position: absolute;
+  inset: 0;
+  transition: background 1.2s var(--ease-out);
+  background: linear-gradient(180deg, #fbeecb, #e9dcc2);
+}
+/* mood shifts: warm pasture at dawn → cold storm with the ravens */
+.travelers__stage--dawn {
+  background:
+    radial-gradient(ellipse at 40% 34%, rgba(244, 215, 154, 0.6), transparent 62%),
+    linear-gradient(180deg, #fbeecb, #f1e2c4);
+}
+.travelers__stage--meadow {
+  background:
+    radial-gradient(ellipse at 38% 40%, rgba(234, 183, 88, 0.4), transparent 60%),
+    linear-gradient(180deg, #f2e6c8, #e7dcbb);
+}
+.travelers__stage--town {
+  background:
+    radial-gradient(ellipse at 42% 44%, rgba(246, 203, 166, 0.4), transparent 60%),
+    linear-gradient(180deg, #efe1c6, #d9cbaa);
+}
+.travelers__stage--restless {
+  background:
+    radial-gradient(ellipse at 40% 46%, rgba(209, 115, 137, 0.22), transparent 62%),
+    linear-gradient(180deg, #e3d6bd, #c9b79a);
+}
+.travelers__stage--ravens {
+  background:
+    radial-gradient(ellipse at 40% 40%, rgba(43, 58, 42, 0.5), transparent 66%),
+    linear-gradient(180deg, #8f8f85, #4c4f4a);
+}
+.travelers__stage--rain {
+  background:
+    radial-gradient(ellipse at 40% 44%, rgba(20, 28, 20, 0.6), transparent 70%),
+    linear-gradient(180deg, #4a5254, #20282b);
+}
+
+/* the pinned picture / blank slot */
+.travelers__frame {
+  position: absolute;
+  top: 50%;
+  left: 34%;
+  transform: translate(-50%, -50%);
+  width: min(42vw, 34rem);
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 30px 90px rgba(60, 44, 25, 0.28);
+}
+.travelers__frame-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  animation: travelers-kenburns 30s ease-in-out infinite alternate;
+}
+@keyframes travelers-kenburns {
+  from {
+    transform: scale(1.03) translateY(0);
+  }
+  to {
+    transform: scale(1.12) translateY(-2%);
+  }
+}
+
+/* blank placeholder: a soft framed space waiting for a picture */
+.travelers__frame-blank {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+  text-align: center;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.12));
+  border: 1px dashed rgba(90, 70, 45, 0.35);
+}
+.travelers__frame-hint {
+  font-family: var(--sans);
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(70, 54, 33, 0.55);
+  line-height: 1.5;
+}
+
+.travelers__vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
+  background: radial-gradient(
+    ellipse at 34% 50%,
+    transparent 32%,
+    rgba(40, 30, 16, 0.14) 78%,
+    rgba(40, 30, 16, 0.28) 100%
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .travelers__frame-img {
+    animation: none;
+  }
+  .travelers__stage {
+    transition: none;
+  }
+}
+
+/* ---------- stanzas (clean text, no card) ---------- */
+.travelers__scrolly .scrolly__step > * {
+  background: none;
+  border: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  padding: 0;
+}
+.travelers__scrolly .scrolly__step {
+  max-width: 35rem;
+}
+.travelers__stanza {
+  text-shadow:
+    0 1px 2px rgba(247, 241, 230, 0.9),
+    0 0 22px rgba(247, 241, 230, 0.7);
+}
+.travelers__line {
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1rem, 1.6vw, 1.4rem);
+  line-height: 1.55;
+  color: #2c2418;
+  margin: 0 0 0.2rem;
+}
+
+/* On phones, tuck the picture behind the text and lighten a scrim over it. */
+@media (max-width: 760px) {
+  .travelers__frame {
+    left: 50%;
+    width: min(82vw, 34rem);
+  }
+  .travelers__vignette {
+    background: radial-gradient(
+      ellipse at 50% 42%,
+      rgba(247, 241, 230, 0.5) 20%,
+      rgba(247, 241, 230, 0.86) 90%
+    );
+  }
+  .travelers__scrolly .scrolly__step {
+    max-width: 100%;
+  }
+}
