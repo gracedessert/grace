@@ -24,7 +24,7 @@ const STANZAS: string[][] = [
     ".",
     "i've heard that seeing the sun fall below the ocean from this angle",
     "can give you answers",
-    "and it's silly but i have no where else to turn"
+    "and it's silly but i have no where else to turn",
     "what i didn't say, why i left, the reason i'm not okay.",
     "i keep turning corners to hope the next one will make me learn",
   ],
