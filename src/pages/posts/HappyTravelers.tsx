@@ -17,8 +17,12 @@ interface Stanza {
   slot: string;
 }
 
+/** self-hosted photos live in public/images/happy-travelers/ */
+const IMG = import.meta.env.BASE_URL + "images/happy-travelers/";
+
 const STANZAS: Stanza[] = [
   {
+    img: IMG + "01-pasture-dawn.jpg",
     slot: "waking — soft light, a horse in the field",
     lines: [
       "breeze, sweet as a mother's hug.",
@@ -27,6 +31,7 @@ const STANZAS: Stanza[] = [
     ],
   },
   {
+    img: IMG + "02-horse-blackbird.jpg",
     slot: "the only words — horse, bird, honeybee",
     lines: [
       "these are the only words i've got— dark horse, black bird, the fluffy kind of honeybee",
@@ -34,6 +39,7 @@ const STANZAS: Stanza[] = [
     ],
   },
   {
+    img: IMG + "03-town-ruin.jpg",
     slot: "the town — cottages, someone else's finished work",
     lines: [
       "i'm sure many sat here before and actually did something, composed lullabies, mysteries, essays with depth and any kind of conviction",
@@ -41,6 +47,7 @@ const STANZAS: Stanza[] = [
     ],
   },
   {
+    img: IMG + "04-village-field.jpg",
     slot: "too much time — grass, flowers along the shoreline",
     lines: [
       "in between pleasant pastures and quaint cottages all i think is there is too much time.",
@@ -52,6 +59,7 @@ const STANZAS: Stanza[] = [
     ],
   },
   {
+    img: IMG + "05-cliff-tower.jpg",
     slot: "the turn — a thousand ravens leaving the trees",
     lines: [
       "tonight, when i've finally released my tears, a thousand ravens emerge from the trees",
