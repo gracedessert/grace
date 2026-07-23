@@ -128,7 +128,7 @@ export default function HappyTravelers() {
       {/* title */}
       <header className="travelers__title-card">
         <p className="travelers__kicker">july 23rd, 2026</p>
-        <h1 className="travelers__title">county claire</h1>
+        <h1 className="travelers__title">county clare</h1>
         <div className="travelers__rule" />
       </header>
 
