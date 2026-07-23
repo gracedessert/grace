@@ -1,4 +1,3 @@
-import GrainOverlay from "../../components/art/GrainOverlay";
 import Scrollytelling from "../../components/scrolly/Scrollytelling";
 import Reveal from "../../components/scrolly/Reveal";
 import Footer from "../../components/layout/Footer";
@@ -116,8 +115,6 @@ export default function HappyTravelers() {
                   </div>
                 )}
               </div>
-              <div className="travelers__vignette" />
-              <GrainOverlay opacity={0.1} blend="soft-light" />
             </div>
           );
         }}
