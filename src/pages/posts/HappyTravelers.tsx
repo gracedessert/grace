@@ -77,6 +77,13 @@ const STANZAS: Stanza[] = [
       "we love the rain, my dear.”",
     ],
   },
+  {
+    // final beat: the cliffs held with no text, so the last stanza can scroll
+    // all the way up and the photo stands alone before the footer.
+    img: IMG + "06-cliffs-sea.jpg",
+    slot: "",
+    lines: [],
+  },
 ];
 
 export default function HappyTravelers() {
