@@ -1,6 +1,7 @@
 import type { ComponentType } from "react";
 import Restoration from "../pages/posts/Restoration";
 import UltimateData from "../pages/posts/UltimateData";
+import HappyTravelers from "../pages/posts/HappyTravelers";
 
 export interface Post {
   /** URL slug, mounted at /essays/:slug */
@@ -26,6 +27,16 @@ export interface Post {
  * read from here, so adding a new essay is: write the component, add an entry.
  */
 export const posts: Post[] = [
+  {
+    slug: "happy-travelers",
+    title: "Happy Travelers",
+    subtitle: "A morning in a town that begs you to think — and the ravens that answer.",
+    date: "2026-07-23",
+    kicker: "a poem",
+    accent: "#d9922f",
+    swatch: ["#eab758", "#2b3a2a"],
+    component: HappyTravelers,
+  },
   {
     slug: "ultimate-data",
     title: "What We Count About Ultimate",
