@@ -192,9 +192,12 @@
    image only directly behind them — so the rest of the photo stays sharp and
    full-color (Direction C). */
 @media (max-width: 760px) {
+  /* full-bleed photo, edge to edge */
   .travelers__frame {
     left: 50%;
-    width: min(82vw, 34rem);
+    width: 100vw;
+    border-radius: 0;
+    box-shadow: none;
   }
   /* no whole-image wash — legibility comes from the frosted panel below */
   .travelers__vignette {
@@ -203,15 +206,15 @@
   .travelers__scrolly .scrolly__step {
     max-width: 100%;
   }
-  /* frosted-glass panel behind the stanza's text */
+  /* frosted-glass panel behind the stanza's text — sheer, with tight padding */
   .travelers__scrolly .scrolly__step > * {
-    padding: 1.1rem 1.2rem;
+    padding: 0.7rem 0.9rem;
     border-radius: 14px;
-    background: color-mix(in srgb, #f7f1e6 62%, transparent);
+    background: color-mix(in srgb, #f7f1e6 45%, transparent);
     backdrop-filter: blur(12px) saturate(1.05);
     -webkit-backdrop-filter: blur(12px) saturate(1.05);
-    border: 1px solid rgba(255, 255, 255, 0.35);
-    box-shadow: 0 12px 34px rgba(40, 30, 16, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 28px rgba(40, 30, 16, 0.18);
   }
   /* the final textless slide has no words, so show no empty panel */
   .travelers__scrolly .scrolly__step > *:empty {
