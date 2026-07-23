@@ -71,13 +71,14 @@
   inset: 0;
 }
 
-/* the pinned picture / blank slot */
+/* the pinned picture / blank slot — held in the left half so the text
+   column (right half) never overlaps it on tablet/desktop */
 .travelers__frame {
   position: absolute;
   top: 50%;
-  left: 34%;
+  left: 25%;
   transform: translate(-50%, -50%);
-  width: min(42vw, 34rem);
+  width: min(44vw, 30rem);
   aspect-ratio: 4 / 5;
   overflow: hidden;
   border-radius: 2px;
@@ -148,7 +149,7 @@
   pointer-events: none;
   z-index: 4;
   background: radial-gradient(
-    ellipse at 34% 50%,
+    ellipse at 25% 50%,
     transparent 32%,
     rgba(40, 30, 16, 0.084) 78%,
     rgba(40, 30, 16, 0.168) 100%
@@ -172,8 +173,9 @@
   -webkit-backdrop-filter: none;
   padding: 0;
 }
+/* keep the text to the right half so it clears the left-side image */
 .travelers__scrolly .scrolly__step {
-  max-width: 35rem;
+  max-width: min(27rem, 40vw);
 }
 .travelers__line {
   font-family: var(--serif);
