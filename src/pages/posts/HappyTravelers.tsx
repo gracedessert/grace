@@ -67,6 +67,7 @@ const STANZAS: Stanza[] = [
     ],
   },
   {
+    img: IMG + "06-cliffs-sea.jpg",
     slot: "the ravens speak — rocky cliffs, deep water, rain",
     lines: [
       "“did you not believe?",
