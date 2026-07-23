@@ -84,12 +84,32 @@
   background: rgba(255, 255, 255, 0.35);
   box-shadow: 0 30px 90px rgba(60, 44, 25, 0.28);
 }
-.travelers__frame-img {
+/* progressive photo: blurred placeholder under the full image */
+.travelers__pimg {
+  position: absolute;
+  inset: 0;
+}
+.travelers__pimg-lqip,
+.travelers__pimg-full {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+}
+.travelers__pimg-lqip {
+  /* upscale + blur the 32px placeholder to a soft wash */
+  transform: scale(1.1);
+  filter: blur(16px);
+}
+.travelers__pimg-full {
+  opacity: 0;
+  transition: opacity 0.7s var(--ease-out);
   animation: travelers-kenburns 30s ease-in-out infinite alternate;
+}
+.travelers__pimg-full.is-loaded {
+  opacity: 1;
 }
 @keyframes travelers-kenburns {
   from {
@@ -136,7 +156,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .travelers__frame-img {
+  .travelers__pimg-full {
     animation: none;
   }
   .travelers__stage {
