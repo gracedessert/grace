@@ -85,7 +85,7 @@ const STANZAS: Stanza[] = [
     ],
   },
   {
-    img: "05-cliff-tower",
+    img: "05-ravens-roof",
     slot: "the turn — a thousand ravens leaving the trees",
     lines: [
       "tonight, when i've finally released my tears, a thousand ravens emerge from the trees.",
