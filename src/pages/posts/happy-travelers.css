@@ -51,12 +51,14 @@
    morning) and turn cold in the back third, where the ravens arrive.
    ---------------------------------------------------------------------- */
 .travelers__scrolly {
+  /* starts at #e9dcc2 — the exact color the title card fades to at its bottom —
+     so the first scroll continues seamlessly instead of popping brighter, then
+     only ever darkens from there down into the storm. */
   background: linear-gradient(
     180deg,
-    #fbeecb 0%,
-    #f4e6c6 14%,
-    #f0e2c3 30%,
-    #e9dcbc 46%,
+    #e9dcc2 0%,
+    #e6d8bb 18%,
+    #e0d0ae 38%,
     #d8c8a4 60%,
     #b6b096 72%,
     #7f847d 83%,
