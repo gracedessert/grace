@@ -15,13 +15,10 @@ interface Stanza {
   lines: string[];
   img?: string;
   slot: string;
-  /** which mood the sticky stage wears: warm pasture → cold storm */
-  mood: "dawn" | "meadow" | "town" | "restless" | "ravens" | "rain";
 }
 
 const STANZAS: Stanza[] = [
   {
-    mood: "dawn",
     slot: "waking — soft light, a horse in the field",
     lines: [
       "breeze, sweet as a mother's hug.",
@@ -30,7 +27,6 @@ const STANZAS: Stanza[] = [
     ],
   },
   {
-    mood: "meadow",
     slot: "the only words — horse, bird, honeybee",
     lines: [
       "these are the only words i've got— dark horse, black bird, the fluffy kind of honeybee",
@@ -38,7 +34,6 @@ const STANZAS: Stanza[] = [
     ],
   },
   {
-    mood: "town",
     slot: "the town — cottages, someone else's finished work",
     lines: [
       "i'm sure many sat here before and actually did something, composed lullabies, mysteries, essays with depth and any kind of conviction",
@@ -46,7 +41,6 @@ const STANZAS: Stanza[] = [
     ],
   },
   {
-    mood: "restless",
     slot: "too much time — grass, flowers along the shoreline",
     lines: [
       "in between pleasant pastures and quaint cottages all i think is there is too much time.",
@@ -58,7 +52,6 @@ const STANZAS: Stanza[] = [
     ],
   },
   {
-    mood: "ravens",
     slot: "the turn — a thousand ravens leaving the trees",
     lines: [
       "tonight, when i've finally released my tears, a thousand ravens emerge from the trees",
@@ -66,7 +59,6 @@ const STANZAS: Stanza[] = [
     ],
   },
   {
-    mood: "rain",
     slot: "the ravens speak — rocky cliffs, deep water, rain",
     lines: [
       "“did you not believe?",
@@ -104,7 +96,7 @@ export default function HappyTravelers() {
         renderSticky={(active) => {
           const stanza = STANZAS[active] ?? STANZAS[0];
           return (
-            <div className={`travelers__stage travelers__stage--${stanza.mood}`}>
+            <div className="travelers__stage">
               <div className="travelers__frame">
                 {stanza.img ? (
                   <img className="travelers__frame-img" src={stanza.img} alt="" />
@@ -123,7 +115,7 @@ export default function HappyTravelers() {
         steps={steps}
       />
 
-      <Footer tone="light" />
+      <Footer tone="dark" />
     </div>
   );
 }

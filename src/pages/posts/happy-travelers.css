@@ -1,5 +1,7 @@
 .travelers {
-  background: #f4ecdd;
+  /* matches the storm color at the very bottom of the scroll gradient, so the
+     footer continues it seamlessly instead of snapping back to cream */
+  background: #20282b;
   color: #2c2418;
 }
 
@@ -40,43 +42,33 @@
   background: linear-gradient(var(--gold-400), transparent);
 }
 
-/* ---------- sticky image stage ---------- */
+/* ----------------------------------------------------------------------
+   One continuous gradient down the whole scroll section. It's painted on
+   the full-height .scrolly element, so scrolling simply moves the viewport
+   through it — a smooth warm-pasture-to-cold-storm shift with no stepwise
+   swaps. The sticky stage below is transparent so this shows through it.
+   Stops are weighted to hold the warmth for the first ~60% (the pastoral
+   morning) and turn cold in the back third, where the ravens arrive.
+   ---------------------------------------------------------------------- */
+.travelers__scrolly {
+  background: linear-gradient(
+    180deg,
+    #fbeecb 0%,
+    #f4e6c6 14%,
+    #f0e2c3 30%,
+    #e9dcbc 46%,
+    #d8c8a4 60%,
+    #b6b096 72%,
+    #7f847d 83%,
+    #4c5450 92%,
+    #20282b 100%
+  );
+}
+
+/* ---------- sticky image stage (transparent over the gradient) ---------- */
 .travelers__stage {
   position: absolute;
   inset: 0;
-  transition: background 1.2s var(--ease-out);
-  background: linear-gradient(180deg, #fbeecb, #e9dcc2);
-}
-/* mood shifts: warm pasture at dawn → cold storm with the ravens */
-.travelers__stage--dawn {
-  background:
-    radial-gradient(ellipse at 40% 34%, rgba(244, 215, 154, 0.6), transparent 62%),
-    linear-gradient(180deg, #fbeecb, #f1e2c4);
-}
-.travelers__stage--meadow {
-  background:
-    radial-gradient(ellipse at 38% 40%, rgba(234, 183, 88, 0.4), transparent 60%),
-    linear-gradient(180deg, #f2e6c8, #e7dcbb);
-}
-.travelers__stage--town {
-  background:
-    radial-gradient(ellipse at 42% 44%, rgba(246, 203, 166, 0.4), transparent 60%),
-    linear-gradient(180deg, #efe1c6, #d9cbaa);
-}
-.travelers__stage--restless {
-  background:
-    radial-gradient(ellipse at 40% 46%, rgba(209, 115, 137, 0.22), transparent 62%),
-    linear-gradient(180deg, #e3d6bd, #c9b79a);
-}
-.travelers__stage--ravens {
-  background:
-    radial-gradient(ellipse at 40% 40%, rgba(43, 58, 42, 0.5), transparent 66%),
-    linear-gradient(180deg, #8f8f85, #4c4f4a);
-}
-.travelers__stage--rain {
-  background:
-    radial-gradient(ellipse at 40% 44%, rgba(20, 28, 20, 0.6), transparent 70%),
-    linear-gradient(180deg, #4a5254, #20282b);
 }
 
 /* the pinned picture / blank slot */
