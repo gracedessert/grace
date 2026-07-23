@@ -50,9 +50,11 @@ const STANZAS: Stanza[] = [
     slot: "too much time — grass, flowers along the shoreline",
     lines: [
       "in between pleasant pastures and quaint cottages all i think is there is too much time.",
-      "and too many pages i'd like to will myself to write.",
-      "too many anxieties i'd like to burn from my brain.",
-      "too many tears i need to cry for no reason, before this soft grass, sweet hum, yellow flowers painted along the shoreline can speak to me.",
+      "the way the morning light blinds us,",
+      "there are too many— pages",
+      "to will myself to write, anxieties",
+      "to burn from my brain, tears",
+      "to cry for no reason, before this soft grass, sweet hum, yellow flowers painted along the shoreline can speak to me",
     ],
   },
   {
