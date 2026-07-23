@@ -29,7 +29,7 @@ export interface Post {
 export const posts: Post[] = [
   {
     slug: "happy-travelers",
-    title: "Happy Travelers",
+    title: "County Claire",
     subtitle: "A morning in a town that begs you to think — and the ravens that answer.",
     date: "2026-07-23",
     kicker: "a poem",
