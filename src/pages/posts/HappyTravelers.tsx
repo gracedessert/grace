@@ -61,7 +61,7 @@ const STANZAS: Stanza[] = [
     img: IMG + "05-cliff-tower.jpg",
     slot: "the turn — a thousand ravens leaving the trees",
     lines: [
-      "tonight, when i've finally released my tears, a thousand ravens emerge from the trees",
+      "tonight, when i've finally released my tears, a thousand ravens emerge from the trees.",
       "they scream, and the happy travelers cover their ears.",
     ],
   },
