@@ -121,6 +121,20 @@
   line-height: 1.5;
 }
 
+/* edge fade over the photo — 40% of its former strength */
+.travelers__vignette {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 4;
+  background: radial-gradient(
+    ellipse at 34% 50%,
+    transparent 32%,
+    rgba(40, 30, 16, 0.056) 78%,
+    rgba(40, 30, 16, 0.112) 100%
+  );
+}
+
 @media (prefers-reduced-motion: reduce) {
   .travelers__frame-img {
     animation: none;
@@ -161,6 +175,14 @@
   .travelers__frame {
     left: 50%;
     width: min(82vw, 34rem);
+  }
+  /* cream scrim for text legibility over the photo — 40% of its former strength */
+  .travelers__vignette {
+    background: radial-gradient(
+      ellipse at 50% 42%,
+      rgba(247, 241, 230, 0.2) 20%,
+      rgba(247, 241, 230, 0.344) 90%
+    );
   }
   .travelers__scrolly .scrolly__step {
     max-width: 100%;

@@ -115,6 +115,7 @@ export default function HappyTravelers() {
                   </div>
                 )}
               </div>
+              <div className="travelers__vignette" />
             </div>
           );
         }}
