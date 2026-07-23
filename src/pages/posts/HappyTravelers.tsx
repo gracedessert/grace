@@ -35,7 +35,7 @@ const STANZAS: Stanza[] = [
     slot: "the only words — horse, bird, honeybee",
     lines: [
       "these are the only words i've got— dark horse, black bird, the fluffy kind of honeybee",
-      "i'm sure my sister would know",
+      "i'm sure my sister would know the names of",
     ],
   },
   {
