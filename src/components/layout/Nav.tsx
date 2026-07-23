@@ -10,9 +10,6 @@ export default function Nav({ tone = "light" }: { tone?: "light" | "dark" }) {
       <Link to="/" className="nav__mark">
         grace
       </Link>
-      <Link to="/" className="nav__back">
-        home
-      </Link>
     </header>
   );
 }
