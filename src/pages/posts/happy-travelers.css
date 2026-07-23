@@ -155,12 +155,6 @@
 .travelers__scrolly .scrolly__step {
   max-width: 35rem;
 }
-.travelers__stanza {
-  text-shadow:
-    0 1px 2px rgba(247, 241, 230, 1),
-    0 0 12px rgba(247, 241, 230, 0.95),
-    0 0 30px rgba(247, 241, 230, 0.85);
-}
 .travelers__line {
   font-family: var(--serif);
   font-style: italic;
